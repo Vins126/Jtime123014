@@ -1,0 +1,10 @@
+Nel contratto di project forse è da gestire meglio il cambio di stato in base allo stato delle task
+
+ROLLING WINDOW, IL PROGRAMMA PROPONE DI CANCELLARE I GIORNI PRECEDENTI.
+I giorni precedenti però possono essere eliminati solo se non ci sono task pendenti. 
+Se ci sono task pendenti, il programma propone di ricalcolare tutto il calendario (a partire da oggi in poi) e poi cancella i giorni precedenti
+
+
+Create Day deve avere due possibilità, creare uno standard di 8 ore o uno personalizzato (passando i parametri)
+
+
