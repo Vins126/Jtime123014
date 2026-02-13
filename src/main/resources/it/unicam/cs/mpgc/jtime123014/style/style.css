@@ -1,0 +1,185 @@
+/* JTime Main Stylesheet */
+
+* {
+    -fx-primary-color: #34495e; /* Wet Asphalt */
+    -fx-secondary-color: #2c3e50; /* Midnight Blue */
+    -fx-accent-color: #3498db; /* Peter River */
+    -fx-bg-color: #ecf0f1; /* Clouds */
+    -fx-text-color: #2c3e50;
+    -fx-light-text-color: #7f8c8d;
+    
+    -fx-success-color: #2ecc71;
+    -fx-warning-color: #f1c40f;
+    -fx-danger-color: #e74c3c;
+}
+
+.root {
+  -fx-font-family: "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+  -fx-font-size: 14px;
+  -fx-background-color: -fx-bg-color;
+  -fx-text-fill: -fx-text-color;
+}
+
+/* App Title */
+.app-title {
+    -fx-font-size: 32px;
+    -fx-font-weight: bold;
+    -fx-text-fill: white;
+    -fx-padding: 0 0 20 10;
+}
+
+/* Navigation Menu */
+.sidebar {
+  -fx-background-color: -fx-secondary-color;
+  -fx-padding: 20 10 20 10;
+  -fx-spacing: 12;
+}
+
+.nav-button {
+  -fx-background-color: transparent;
+  -fx-text-fill: #bdc3c7;
+  -fx-font-size: 15px;
+  -fx-alignment: CENTER_LEFT;
+  -fx-cursor: hand;
+  -fx-background-radius: 6;
+  -fx-padding: 12 20;
+  -fx-border-color: transparent;
+  -fx-border-width: 0 0 0 3;
+}
+
+.nav-button:hover {
+  -fx-background-color: #3e5871;
+  -fx-text-fill: white;
+}
+
+.nav-button:selected {
+  -fx-background-color: #3e5871;
+  -fx-text-fill: white;
+  -fx-border-color: -fx-accent-color;
+  -fx-font-weight: bold;
+}
+
+/* Content Area */
+.content-area, .scroll-pane {
+  -fx-background-color: -fx-bg-color;
+  -fx-background: -fx-bg-color;
+}
+
+/* Headers */
+.header-label {
+  -fx-font-size: 26px;
+  -fx-font-weight: 700;
+  -fx-text-fill: -fx-primary-color;
+  -fx-padding: 0 0 15 0;
+}
+
+/* Buttons */
+.button {
+    -fx-background-radius: 4;
+    -fx-cursor: hand;
+    -fx-font-size: 13px;
+    -fx-padding: 6 12;
+    -fx-text-fill: white;
+    -fx-font-weight: 600;
+    -fx-background-color: -fx-accent-color;
+}
+
+.button:hover {
+    -fx-background-color: derive(-fx-accent-color, -10%);
+}
+
+.action-button {
+    -fx-background-color: -fx-accent-color;
+}
+
+/* Back Button */
+.btn-back {
+    -fx-background-color: white;
+    -fx-text-fill: -fx-accent-color;
+    -fx-border-color: -fx-accent-color;
+    -fx-border-radius: 4;
+}
+
+.btn-back:hover {
+    -fx-background-color: -fx-accent-color;
+    -fx-text-fill: white;
+}
+
+/* List Action Buttons (Icon Only, Blue, White Outline) */
+.btn-open, .btn-edit, .btn-delete, .btn-success {
+    -fx-background-color: transparent;
+    -fx-border-color: white; /* "Contorno Bianco" */
+    -fx-border-radius: 4;
+    -fx-padding: 5 8;
+}
+
+/* Icon Colors */
+.btn-open { -fx-text-fill: -fx-accent-color; }
+.btn-edit { -fx-text-fill: -fx-accent-color; }
+.btn-delete { -fx-text-fill: -fx-accent-color; }
+.btn-success { -fx-text-fill: -fx-accent-color; }
+
+/* Hover effects for list buttons */
+.btn-open:hover, .btn-edit:hover, .btn-delete:hover, .btn-success:hover {
+    -fx-background-color: white;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.1), 3, 0, 0, 1);
+}
+
+
+/* Lists */
+.list-view {
+    -fx-background-color: transparent;
+    -fx-background-insets: 0;
+    -fx-padding: 0;
+}
+
+.list-cell {
+    -fx-background-color: white;
+    -fx-background-radius: 6;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.05), 5, 0, 0, 2);
+    -fx-padding: 10;
+    -fx-border-color: transparent;
+    -fx-margin: 0 0 10 0;
+}
+
+.list-cell:empty {
+    -fx-background-color: transparent;
+    -fx-effect: null;
+}
+
+.list-cell:filled:selected, .list-cell:filled:hover {
+    -fx-background-color: #fcfcfc;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.1), 8, 0, 0, 4);
+}
+
+/* Dialog Styling */
+.dialog-pane {
+    -fx-background-color: white;
+    -fx-font-family: "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+}
+
+.dialog-pane > .header-panel {
+    -fx-background-color: -fx-secondary-color;
+    -fx-padding: 15;
+}
+
+.dialog-pane > .header-panel > .label {
+    -fx-font-size: 18px;
+    -fx-font-weight: bold;
+    -fx-text-fill: white;
+}
+
+.dialog-pane .content {
+    -fx-padding: 20;
+    -fx-background-color: white;
+}
+
+.dialog-pane .button-bar .button {
+    -fx-background-color: -fx-accent-color;
+    -fx-text-fill: white;
+}
+
+.dialog-pane .button-bar .button:hover {
+    -fx-background-color: derive(-fx-accent-color, -10%);
+}
+

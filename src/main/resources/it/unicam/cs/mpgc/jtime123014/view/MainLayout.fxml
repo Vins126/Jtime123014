@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.layout.HBox?>
+
+<BorderPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="it.unicam.cs.mpgc.jtime123014.MainController"
+            prefHeight="600.0" prefWidth="800.0"
+            stylesheets="@../style/style.css">
+
+    <!-- Left Sidebar -->
+    <left>
+        <VBox styleClass="sidebar" prefWidth="200.0">
+            <Label text="JTime" styleClass="app-title"/>
+            
+            <Button fx:id="btnHome" text="Home" styleClass="nav-button" maxWidth="Infinity" onAction="#showHome"/>
+            <Button fx:id="btnCalendar" text="Calendario" styleClass="nav-button" maxWidth="Infinity" onAction="#showCalendar"/>
+            <Button fx:id="btnProjects" text="Progetti" styleClass="nav-button" maxWidth="Infinity" onAction="#showProjects"/>
+        </VBox>
+    </left>
+
+
+    <!-- Center Content (Dynamic) -->
+    <center>
+        <BorderPane fx:id="contentArea" styleClass="content-area">
+            <center>
+                <Label text="Benvenuto in JTime" styleClass="header-label"/>
+            </center>
+        </BorderPane>
+    </center>
+
+</BorderPane>

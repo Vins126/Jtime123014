@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="it.unicam.cs.mpgc.jtime123014.ProjectTasksController"
+      spacing="10" style="-fx-padding: 20;">
+
+    <HBox alignment="CENTER_LEFT" spacing="20">
+        <Button text="← Indietro" onAction="#handleBack" styleClass="btn-back"/>
+        <Label fx:id="projectNameLabel" text="Dettagli Progetto" styleClass="header-label"/>
+        <Region HBox.hgrow="ALWAYS" />
+        <Button text="+ Nuova Task" onAction="#handleAddTask" styleClass="action-button"/>
+    </HBox>
+
+    <ListView fx:id="tasksList" VBox.vgrow="ALWAYS" />
+
+</VBox>

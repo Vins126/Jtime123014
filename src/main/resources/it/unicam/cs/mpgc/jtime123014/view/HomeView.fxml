@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.geometry.Insets?>
+
+<VBox xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="it.unicam.cs.mpgc.jtime123014.HomeController"
+      spacing="20" style="-fx-padding: 30;">
+
+    <Label text="Dashboard" styleClass="header-label"/>
+    <Label text="Benvenuto in JTime. Ecco il riepilogo delle attività." style="-fx-font-size: 16px; -fx-text-fill: #7f8c8d;"/>
+
+    <GridPane hgap="20" vgap="20">
+        <VBox style="-fx-background-color: white; -fx-padding: 20; -fx-background-radius: 10; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.1), 10, 0, 0, 0);" GridPane.columnIndex="0" GridPane.rowIndex="0">
+            <Label text="Progetti Totali" style="-fx-font-size: 14px; -fx-text-fill: #7f8c8d;"/>
+            <Label fx:id="totalProjectsLabel" text="0" style="-fx-font-size: 36px; -fx-font-weight: bold; -fx-text-fill: #2c3e50;"/>
+        </VBox>
+
+        <VBox style="-fx-background-color: white; -fx-padding: 20; -fx-background-radius: 10; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.1), 10, 0, 0, 0);" GridPane.columnIndex="1" GridPane.rowIndex="0">
+            <Label text="Task Pendenti" style="-fx-font-size: 14px; -fx-text-fill: #7f8c8d;"/>
+            <Label fx:id="pendingTasksLabel" text="0" style="-fx-font-size: 36px; -fx-font-weight: bold; -fx-text-fill: #e67e22;"/>
+        </VBox>
+        
+        <VBox style="-fx-background-color: white; -fx-padding: 20; -fx-background-radius: 10; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.1), 10, 0, 0, 0);" GridPane.columnIndex="2" GridPane.rowIndex="0">
+            <Label text="Prossima Scadenza" style="-fx-font-size: 14px; -fx-text-fill: #7f8c8d;"/>
+            <Label fx:id="nextDeadlineLabel" text="-" style="-fx-font-size: 24px; -fx-font-weight: bold; -fx-text-fill: #e74c3c;"/>
+        </VBox>
+    </GridPane>
+
+</VBox>

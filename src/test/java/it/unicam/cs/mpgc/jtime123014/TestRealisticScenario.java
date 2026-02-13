@@ -1,13 +1,5 @@
 package it.unicam.cs.mpgc.jtime123014;
 
-import it.unicam.cs.mpgc.jtime123014.controller.JTimeController;
-import it.unicam.cs.mpgc.jtime123014.model.Day;
-import it.unicam.cs.mpgc.jtime123014.model.Priority;
-import it.unicam.cs.mpgc.jtime123014.model.Project;
-import it.unicam.cs.mpgc.jtime123014.model.SimpleProject;
-import it.unicam.cs.mpgc.jtime123014.model.SimpleTask;
-import it.unicam.cs.mpgc.jtime123014.model.Task;
-import it.unicam.cs.mpgc.jtime123014.model.Status; // Assicurati di importare Status se necessario
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -44,6 +36,14 @@ class TestRealisticScenario {
 
     @Test
     void testFullWorkflow() {
+        JTimeController controller = new JTimeController();
+
+        // CLEANUP: Remove existing projects to ensure test isolation
+        java.util.List<Project<?>> currentProjects = new java.util.ArrayList<>(controller.getProjects());
+        for (Project<?> project : currentProjects) {
+            controller.removeProject(project);
+        }
+
         // 1. Setup: Crea 3 Progetti
 
         // Priority ha: HIGH, MEDIUM, LOW. Se URGENT non c'è, uso HIGH.
@@ -99,7 +99,7 @@ class TestRealisticScenario {
         controller.addProject(pDocs);
 
         // 2. Esecuzione: Schedule
-        controller.schedule();
+        controller.schedule(480);
 
         // 3. Simulazione Lavoro
         // Recupera primo giorno
@@ -129,6 +129,7 @@ class TestRealisticScenario {
         assertNotNull(taskToComplete.getDurationActual());
 
         // 4. Reporting
+        controller.setReportOutputDirectory("src/test/resources/reports");
         controller.createProjectReport(pCore.getId().toString());
         controller.createIntervalReport(LocalDate.now(), LocalDate.now().plusDays(7));
 
