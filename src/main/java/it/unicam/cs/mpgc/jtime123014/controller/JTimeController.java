@@ -123,7 +123,7 @@ public class JTimeController {
      */
     public void updateRollingWindow() {
         // Default buffer: 8 ore (può essere parametrizzato in futuro)
-        calendarService.updateRollingWindow(calendar, LocalDate.now(), 8);
+        calendarService.updateRollingWindow(calendar, LocalDate.now(), 480);
     }
 
     /**
@@ -155,5 +155,15 @@ public class JTimeController {
      */
     public void createIntervalReport(LocalDate start, LocalDate end) {
         reportController.createIntervalReport(start, end);
+    }
+
+    /**
+     * Configura la directory di output per i report.
+     * Utile per i test.
+     * 
+     * @param path il percorso della directory.
+     */
+    public void setReportOutputDirectory(String path) {
+        reportController.setOutputDirectory(path);
     }
 }

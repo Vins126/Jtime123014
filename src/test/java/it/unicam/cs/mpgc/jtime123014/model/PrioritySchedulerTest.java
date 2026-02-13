@@ -120,6 +120,44 @@ class PrioritySchedulerTest {
         assertEquals(25, day0.getFreeBuffer(), "Free buffer should be 100 - 25 - 50 = 25");
     }
 
+    @Test
+    void testLowPriorityTimeBoxingConstraint() {
+        // Scenario: 1 Giorno con 100 minuti di buffer. 1 Progetto LOW (quota 25% -> 25
+        // min).
+        // Azione: Aggiungi Task A (20 min) e Task B (10 min).
+        // Task A occupa 20 min. Residuo quota: 5 min.
+        // Task B (10 min) > 5 min. Non schedulabile oggi.
+        // Assertion: Task B spostata a Giorno 1.
+
+        TestModels.TestProject project = new TestModels.TestProject(UUID.randomUUID(), "LowPrioCon", "Test",
+                Priority.LOW);
+        TestModels.TestTask taskA = new TestModels.TestTask(UUID.randomUUID(), "TA", "DA", 20);
+        TestModels.TestTask taskB = new TestModels.TestTask(UUID.randomUUID(), "TB", "DB", 10);
+
+        project.getTasks().add(taskA);
+        project.getTasks().add(taskB);
+        calendar.addProject(project);
+
+        scheduler.schedule(calendar, today);
+
+        Day<?> day0 = getDay(today);
+        Day<?> day1 = getDay(today.plusDays(1));
+
+        // Verifica Task A nel Giorno 0
+        assertTrue(day0.getTasks().contains(taskA), "Task A (20m) deve essere nel giorno 0");
+
+        // Verifica che Task B NON sia nel Giorno 0 (Max residuo 5m)
+        assertFalse(day0.getTasks().contains(taskB),
+                "Task B (10m) non deve essere schedulata nel giorno 0 (Residuo 5m)");
+
+        // Verifica che SIA nel Giorno 1
+        assertTrue(day1.getTasks().contains(taskB), "Task B must be moved to day 1");
+
+        // Verifica buffer
+        assertEquals(80, day0.getFreeBuffer(), "Buffer Giorno 0: 100 - 20 = 80");
+        assertEquals(90, day1.getFreeBuffer(), "Buffer Giorno 1: 100 - 10 = 90");
+    }
+
     private Day<?> getDay(LocalDate date) {
         return calendar.getDays().stream().filter(d -> d.getId().equals(date)).findFirst().orElseThrow();
     }

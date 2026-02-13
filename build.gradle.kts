@@ -1,5 +1,7 @@
 plugins {
     id("java")
+    id("application")
+    id("org.openjfx.javafxplugin") version "0.1.0"
 }
 
 java {
@@ -8,8 +10,17 @@ java {
     }
 }
 
+javafx {
+    version = "21.0.1"
+    modules("javafx.controls", "javafx.fxml")
+}
+
 group = "org.example"
 version = "1.0-SNAPSHOT"
+
+application {
+    mainClass.set("it.unicam.cs.mpgc.jtime123014.JTimeApp")
+}
 
 repositories {
     mavenCentral()

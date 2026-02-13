@@ -46,6 +46,7 @@ public abstract class AbstractTask extends AbstractEntity<UUID> implements Task<
         this.durationEstimate = durationEstimate;
         this.status = Status.PENDING;
         this.durationActual = null;
+        this.timeConsuming = durationEstimate;
     }
 
     /**

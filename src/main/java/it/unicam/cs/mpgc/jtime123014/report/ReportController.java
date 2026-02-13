@@ -13,6 +13,7 @@ public class ReportController {
     private final DocumentGenerator documentGenerator;
     private final ReportExporter reportExporter;
     private final Calendar<?> calendar; // Needed to look up projects if ID is passed
+    private String outputDirectory = "reports"; // Default directory
 
     public ReportController(Calendar<?> calendar) {
         this.calendar = calendar;
@@ -28,6 +29,10 @@ public class ReportController {
         this.reportService = service;
         this.documentGenerator = generator;
         this.reportExporter = exporter;
+    }
+
+    public void setOutputDirectory(String outputDirectory) {
+        this.outputDirectory = outputDirectory;
     }
 
     public void createProjectReport(String projectId) {
@@ -54,12 +59,14 @@ public class ReportController {
         Document doc = documentGenerator.transform(dto);
 
         // 3. Exporter -> File
-        File outputDir = new File("reports");
+        File outputDir = new File(outputDirectory);
         if (!outputDir.exists())
             outputDir.mkdirs();
 
-        String filename = "reports/Report_" + targetProject.getName().replaceAll("\\s+", "_") + "_" + LocalDate.now()
+        String filename = outputDirectory + "/Report_" + targetProject.getName().replaceAll("\\s+", "_") + "_"
+                + LocalDate.now()
                 + ".xml";
+
         boolean success = reportExporter.export(doc, filename);
 
         if (success) {
@@ -77,11 +84,12 @@ public class ReportController {
         Document doc = documentGenerator.transform(dto);
 
         // 3. Exporter -> File
-        File outputDir = new File("reports");
+        File outputDir = new File(outputDirectory);
         if (!outputDir.exists())
             outputDir.mkdirs();
 
-        String filename = "reports/IntervalReport_" + start + "_to_" + end + ".xml";
+        String filename = outputDirectory + "/IntervalReport_" + start + "_to_" + end + ".xml";
+
         boolean success = reportExporter.export(doc, filename);
 
         if (success) {
