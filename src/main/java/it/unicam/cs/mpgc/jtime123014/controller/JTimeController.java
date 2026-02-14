@@ -21,24 +21,18 @@ import java.io.IOException;
  */
 public class JTimeController implements AppController {
 
-    /** Il Modello dati (Calendario). */
     private Calendar<UUID> calendar;
 
-    /** Servizio per la gestione logica dei giorni e delle finestre temporali. */
     private final CalendarService calendarService;
-
-    /** Componente responsabile dell'algoritmo di pianificazione delle task. */
     private final Scheduler scheduler;
 
-    /** Controller delegato per la gestione dei report. */
     private ReportController reportController;
 
-    /** Servizio per il salvataggio e caricamento dei dati. */
     private final PersistenceService persistenceService;
 
     private final ExecutorService executor;
 
-    /** Percorso del file di salvataggio dati. */
+    /** Percorso del file */
     private static final Path DATA_FILE_PATH = Paths.get("src", "main", "resources", "it", "unicam", "cs", "mpgc",
             "jtime123014", "save", "jtime_data.ser");
 
@@ -68,7 +62,7 @@ public class JTimeController implements AppController {
         // Caricamento dei dati all'avvio
         loadData();
 
-        // Inizializzazione del sottosistema di reporting
+        // Inizializzazione del sistema di reporting
         this.reportController = new ReportController(this.calendar);
 
         // Assicura che la finestra temporale sia valida (crea giorni futuri se
@@ -106,7 +100,7 @@ public class JTimeController implements AppController {
     }
 
     /**
-     * Salva lo stato attuale dell'applicazione su disco (metodo sincrono).
+     * Salva lo stato attuale dell'applicazione su disco.
      */
     public void saveData() {
         try {

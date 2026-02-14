@@ -3,22 +3,25 @@ package it.unicam.cs.mpgc.jtime123014.model;
 import java.time.LocalDate;
 import java.util.Map;
 
+import lombok.Getter;
+
 /**
  * Oggetto che contiene tutti i dati riassuntivi di un progetto per la
  * generazione del report.
- * <p>
+ * 
  * Serve solo per trasportare i dati (come nome, percentuali, stime) dal sistema
  * al generatore di report, senza contenere logica complessa.
  */
+@Getter
 public class ProjectReportDTO {
     private final String projectId;
     private final String projectName;
     private final double completionPercentage;
     private final long totalEstimatedTime;
     private final long totalActualTime;
-    private final long totalDelta; // Actual - Estimated
-    private final Map<String, Integer> taskStatusCounts; // e.g., "COMPLETED" -> 5
-    private final Map<String, java.util.List<String>> taskListsByStatus; // e.g., "COMPLETED" -> ["Task A", "Task B"]
+    private final long totalDelta;
+    private final Map<String, Integer> taskStatusCounts;
+    private final Map<String, java.util.List<String>> taskListsByStatus;
     private final Map<Priority, Integer> priorityDistribution;
     private final LocalDate estimatedEndDate;
 
@@ -54,57 +57,4 @@ public class ProjectReportDTO {
         this.estimatedEndDate = estimatedEndDate;
     }
 
-    // Getters
-
-    /** @return l'ID univoco del progetto. */
-    public String getProjectId() {
-        return projectId;
-    }
-
-    /** @return il nome del progetto. */
-    public String getProjectName() {
-        return projectName;
-    }
-
-    /** @return la percentuale di completamento globale. */
-    public double getCompletionPercentage() {
-        return completionPercentage;
-    }
-
-    /** @return la somma delle stime di tempo di tutte le task. */
-    public long getTotalEstimatedTime() {
-        return totalEstimatedTime;
-    }
-
-    /** @return la somma del tempo effettivamente impiegato per le task. */
-    public long getTotalActualTime() {
-        return totalActualTime;
-    }
-
-    /** @return la differenza totale tra tempo effettivo e stimato (+/-). */
-    public long getTotalDelta() {
-        return totalDelta;
-    }
-
-    /**
-     * @return una mappa che associa ogni stato al numero di task in quello stato.
-     */
-    public Map<String, Integer> getTaskStatusCounts() {
-        return taskStatusCounts;
-    }
-
-    /** @return una mappa che associa ogni stato alla lista dei nomi delle task. */
-    public Map<String, java.util.List<String>> getTaskListsByStatus() {
-        return taskListsByStatus;
-    }
-
-    /** @return una mappa che mostra quante task ci sono per ogni priorità. */
-    public Map<Priority, Integer> getPriorityDistribution() {
-        return priorityDistribution;
-    }
-
-    /** @return la data stimata di completamento del progetto. */
-    public LocalDate getEstimatedEndDate() {
-        return estimatedEndDate;
-    }
 }

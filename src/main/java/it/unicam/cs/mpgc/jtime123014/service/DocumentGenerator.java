@@ -4,7 +4,7 @@ import it.unicam.cs.mpgc.jtime123014.model.*;
 
 /**
  * Interfaccia per la creazione del contenuto dei documenti.
- * <p>
+ * 
  * Trasforma i dati grezzi (DTO) dei report in una struttura a sezioni
  * (Titoli, Paragrafi, Tabelle) pronta per essere esportata (es. in XML).
  */

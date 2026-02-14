@@ -1,18 +1,18 @@
 package it.unicam.cs.mpgc.jtime123014.util;
 
 /**
- * Constants for the Service layer.
+ * Costanti per il layer dei servizi.
  */
 public class ServiceConstants {
 
     /**
-     * Number of days to look ahead for the rolling window.
+     * Numero di giorni da considerare per la finestra mobile.
      */
     public static final int ROLLING_WINDOW_DAYS = 31;
 
     /**
-     * Default work minutes per day used for estimation.
-     * (e.g. 5 hours * 60 minutes)
+     * Minuti di lavoro al giorno utilizzati per la stima.
+     * (es. 5 ore * 60 minuti)
      */
     public static final int WORK_MINUTES_PER_DAY = 300;
 }

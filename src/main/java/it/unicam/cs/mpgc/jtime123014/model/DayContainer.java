@@ -5,7 +5,7 @@ import java.util.List;
 
 /**
  * Interfaccia per la gestione di un insieme di giorni.
- * <p>
+ * 
  * Fornisce i metodi per aggiungere, rimuovere e leggere i giorni.
  * Utile quando si vuole lavorare solo con i giorni senza dover dipendere
  * dall'intero Calendario.

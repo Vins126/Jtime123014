@@ -6,13 +6,9 @@ import java.util.List;
 
 /**
  * Parser per file XML di report.
- * <p>
+ * 
  * Responsabilità unica: leggere un file XML di report e convertirlo
- * in un oggetto {@link Document}. Estratto da {@code ReportController}
- * per rispettare il principio SRP.
- */
-/**
- * Effettua il parsing di report XML salvati.
+ * in un oggetto {@link Document}.
  */
 public class XMLReportParser {
 

@@ -7,7 +7,7 @@ import java.time.LocalDateTime;
 
 /**
  * Rappresenta un report (resoconto) che è stato creato dall'applicazione.
- * <p>
+ * 
  * Contiene il titolo, il file fisico salvato nel computer e, se disponibile,
  * il documento con i dati effettivi.
  * Viene usato per mostrare la lista dei report salvati e per aprirli.
@@ -18,9 +18,6 @@ public class Report {
     private final File file;
     private Document document; // può essere null se caricato solo da file
 
-    /**
-     * Costruttore per report appena generato (con Document).
-     */
     /**
      * Costruttore per report appena generato (con Document).
      *

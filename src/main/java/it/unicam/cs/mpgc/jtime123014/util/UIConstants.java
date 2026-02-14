@@ -1,7 +1,7 @@
 package it.unicam.cs.mpgc.jtime123014.util;
 
 /**
- * Constants for UI strings and resources.
+ * Costanti per le stringhe e le risorse dell'interfaccia utente.
  */
 public class UIConstants {
 

@@ -7,7 +7,7 @@ import java.nio.file.Path;
 
 /**
  * Interfaccia per il salvataggio e il caricamento dei dati.
- * <p>
+ * 
  * Permette di salvare lo stato del calendario su file e di ricaricarlo
  * al prossimo avvio dell'applicazione.
  */

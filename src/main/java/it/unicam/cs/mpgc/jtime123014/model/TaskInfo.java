@@ -2,7 +2,7 @@ package it.unicam.cs.mpgc.jtime123014.model;
 
 /**
  * Interfaccia che definisce le proprietà base di una task.
- * <p>
+ * 
  * Permette di leggere e modificare informazioni come nome, descrizione, stato e
  * stime di tempo.
  * Serve per limitare l'accesso ai soli dati della task, nascondendo altre

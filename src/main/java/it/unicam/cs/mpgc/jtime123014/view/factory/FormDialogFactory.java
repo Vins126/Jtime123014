@@ -12,17 +12,15 @@ import java.util.Optional;
 import java.util.UUID;
 
 /**
- * Factory per Dialog con form domain-specific (progetti, task, selezione date).
- * <p>
- * Responsabilità singola: costruzione di finestre di dialogo con form di input
+ * Classe per la creazione di finestre di dialogo con form di input.
+ * Design Factory (preso da Ing. del Software)
+ * Responsabilità: costruzione di finestre di dialogo con form di input
  * legati alle entità del dominio JTime.
- * Per gli alert generici (errore, conferma, info) usare {@link DialogFactory}.
  */
 public class FormDialogFactory {
 
     /**
-     * Costruttore privato per prevenire l'istanziazione di questa classe di
-     * utilità.
+     * Costruttore privato per prevenire l'istanziazione di questa classe
      */
     private FormDialogFactory() {
         throw new UnsupportedOperationException("Questa è una classe di utilità e non può essere istanziata.");

@@ -16,7 +16,7 @@ import java.util.Objects;
 
 /**
  * Visualizza una singola attività nella lista.
- * <p>
+ * 
  * Mostra il nome della task, se è stata fatta o no, e i pulsanti per
  * segnarla come completata, modificarla o cancellarla.
  */
@@ -77,9 +77,9 @@ public class TaskListCell extends ListCell<Task<?>> {
     }
 
     /**
-     * Aggiorna il contenuto visuale della cella in base allo stato della task.
-     * <p>
-     * Se la task è completata, applica uno stile barrato (strikethrough) al testo
+     * Aggiorna il contenuto della cella in base allo stato della task.
+     * 
+     * Se la task è completata, applica uno stile barrato al testo
      * e disabilita il bottone di completamento.
      *
      * @param item  La task da mostrare.

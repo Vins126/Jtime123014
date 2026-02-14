@@ -13,10 +13,9 @@ import java.util.stream.Collectors;
 
 /**
  * Implementazione concreta di {@link ReportService}.
- * <p>
+ * 
  * Questo servizio coordina il calcolo delle statistiche utilizzando diversi
- * componenti
- * di supporto per analizzare task, stimare progressi e generare report
+ * componenti per analizzare task, stimare progressi e generare report
  * temporali.
  */
 public class SimpleReportService implements ReportService {

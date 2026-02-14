@@ -15,6 +15,11 @@ import javafx.util.Callback;
 import javafx.application.Platform;
 import java.util.Optional;
 
+/**
+ * Gestisce la schermata del calendario.
+ * Permette di vedere i giorni e le attività pianificate, oltre a gestire lo
+ * scheduling e il salvataggio dei dati.
+ */
 public class CalendarController {
 
     /**

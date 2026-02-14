@@ -9,25 +9,25 @@ import javafx.scene.control.Label;
 import javafx.scene.layout.GridPane;
 
 /**
- * Factory class for creating standard UI components.
+ * Classe per la creazione di componenti UI standard.
+ * Design Factory (preso da Ing. del Software)
  */
 public class UIFactory {
 
     /**
-     * Costruttore privato per prevenire l'istanziazione di questa classe di
-     * utilità.
+     * Costruttore privato per prevenire l'istanziazione di questa classe
      */
     private UIFactory() {
         throw new UnsupportedOperationException("Questa è una classe di utilità e non può essere istanziata.");
     }
 
     /**
-     * Creates a standard action button (icon-only style).
+     * Crea un pulsante standard con icona.
      *
-     * @param text       the button text (or icon character).
-     * @param styleClass the CSS class to apply.
-     * @param handler    the action handler.
-     * @return the configured Button.
+     * @param text       il testo del pulsante (o carattere icona).
+     * @param styleClass la classe CSS da applicare.
+     * @param handler    l'handler dell'azione.
+     * @return il pulsante configurato.
      */
     public static Button createActionButton(String text, String styleClass, EventHandler<ActionEvent> handler) {
         Button btn = new Button(text);
@@ -37,11 +37,11 @@ public class UIFactory {
     }
 
     /**
-     * Creates a standard button with text.
+     * Crea un pulsante standard con testo.
      * 
-     * @param text    the button text.
-     * @param handler the action handler.
-     * @return the configured Button.
+     * @param text    il testo del pulsante.
+     * @param handler l'handler dell'azione.
+     * @return il pulsante configurato.
      */
     public static Button createButton(String text, EventHandler<ActionEvent> handler) {
         Button btn = new Button(text);
@@ -51,9 +51,9 @@ public class UIFactory {
     }
 
     /**
-     * Creates a standard GridPane for forms.
+     * Crea un GridPane standard per form.
      * 
-     * @return a configured GridPane.
+     * @return un GridPane configurato.
      */
     public static Button createSuccessButton(EventHandler<ActionEvent> handler) {
         return createActionButton("✓", "btn-success", handler);
@@ -80,9 +80,9 @@ public class UIFactory {
     }
 
     /**
-     * Creates a standard GridPane for forms.
+     * Crea un GridPane standard per form.
      * 
-     * @return a configured GridPane.
+     * @return un GridPane configurato.
      */
     public static GridPane createFormGrid() {
         GridPane grid = new GridPane();

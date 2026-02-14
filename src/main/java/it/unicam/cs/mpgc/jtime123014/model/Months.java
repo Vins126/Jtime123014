@@ -2,7 +2,7 @@ package it.unicam.cs.mpgc.jtime123014.model;
 
 /**
  * Enum che rappresenta i mesi dell'anno.
- * <p>
+ * 
  * Utile per gestire la visualizzazione del calendario e per convertire
  * i nomi dei mesi in italiano.
  */

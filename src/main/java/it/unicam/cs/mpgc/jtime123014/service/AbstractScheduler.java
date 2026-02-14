@@ -10,9 +10,8 @@ import java.util.stream.Collectors;
 /**
  * Classe astratta che fornisce funzionalità comuni per le implementazioni di
  * {@link Scheduler}.
- * <p>
+ * 
  * Questa classe gestisce la logica di filtraggio dei giorni e fornisce metodi
- * di utilità
  * per semplificare la creazione di nuovi algoritmi di scheduling.
  */
 public abstract class AbstractScheduler implements Scheduler {
@@ -26,10 +25,9 @@ public abstract class AbstractScheduler implements Scheduler {
     /**
      * Restituisce la lista dei giorni del calendario successivi o uguali alla data
      * specificata.
-     * <p>
+     * 
      * Seleziona solo i giorni validi (quelli che hanno una data associata) ed
-     * esclude
-     * quelli passati o con formati non supportati.
+     * esclude quelli passati o con formati non supportati.
      *
      * @param calendar il calendario da cui estrarre i giorni.
      * @param today    la data di partenza (inclusa).

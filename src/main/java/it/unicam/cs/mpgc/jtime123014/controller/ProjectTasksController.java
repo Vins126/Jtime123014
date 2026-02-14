@@ -13,7 +13,7 @@ import java.util.Optional;
 
 /**
  * Gestisce la schermata che mostra le attività di un progetto specifico.
- * <p>
+ * 
  * Permette di vedere cosa c'è da fare, aggiungere nuove attività o rimuoverle.
  */
 public class ProjectTasksController {
@@ -32,7 +32,6 @@ public class ProjectTasksController {
 
     private ObservableList<Task<?>> tasksData = FXCollections.observableArrayList();
 
-    /** Il progetto attualmente visualizzato. */
     private Project<?> currentProject;
 
     private MainController mainController;
@@ -97,14 +96,6 @@ public class ProjectTasksController {
 
         result.ifPresent(newTask -> {
             if (newTask != null) {
-                // BUG POTENZIALE: Se stiamo editando, la task è già modificata per riferimento?
-                // insertTask di solito aggiunge in coda.
-                // Se taskToEdit != null, la modifica è probabilmente già avvenuta nell'oggetto,
-                // ma se è nuovo usiamo insertTask.
-                // Controllo se è un inserimento o meno dipenderebbe dall'implementazione di
-                // insertTask,
-                // ma qui assumiamo che newTask sia l'oggetto aggiornato o nuovo.
-                // Se era null (nuovo), lo aggiungiamo.
                 if (taskToEdit == null) {
                     currentProject.insertTask(newTask);
                 }
@@ -112,7 +103,6 @@ public class ProjectTasksController {
             refreshTasks();
         });
 
-        // Forza refresh anche se cancellato il dialog, per sicurezza
         if (taskToEdit != null) {
             refreshTasks();
         }

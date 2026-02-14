@@ -2,7 +2,7 @@ package it.unicam.cs.mpgc.jtime123014.model;
 
 /**
  * Estende {@link Identifiable} aggiungendo la possibilità di modificare l'ID.
- * <p>
+ * 
  * Questa interfaccia viene usata quando è necessario cambiare l'ID di un
  * oggetto
  * dopo la sua creazione, ad esempio durante il caricamento dei dati.

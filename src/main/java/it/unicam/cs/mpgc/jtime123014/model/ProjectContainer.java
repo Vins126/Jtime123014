@@ -4,7 +4,7 @@ import java.util.List;
 
 /**
  * Interfaccia per la gestione di un insieme di progetti.
- * <p>
+ * 
  * Fornisce i metodi per aggiungere, rimuovere e leggere i progetti.
  * Utile quando si vuole lavorare solo con i progetti senza dover dipendere
  * dall'intero Calendario.

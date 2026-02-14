@@ -12,7 +12,7 @@ import java.util.UUID;
 
 /**
  * Implementazione base di un progetto.
- * <p>
+ * 
  * Contiene le informazioni fondamentali come nome, descrizione, stato e la
  * lista delle task.
  */

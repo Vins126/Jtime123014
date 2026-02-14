@@ -4,7 +4,7 @@ import it.unicam.cs.mpgc.jtime123014.model.*;
 
 /**
  * Interfaccia per l'esportazione dei report su file.
- * <p>
+ * 
  * Implementata dalle classi che gestiscono formati specifici (es. XML, JSON).
  */
 public interface ReportExporter {

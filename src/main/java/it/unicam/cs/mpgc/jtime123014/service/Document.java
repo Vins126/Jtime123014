@@ -6,11 +6,11 @@ import java.util.Collections;
 
 /**
  * Rappresenta un documento generico, pronto per essere esportato.
- * <p>
+ * 
  * Contiene i dati organizzati in sezioni, ma non dipende da un formato
- * specifico
- * (come PDF o XML). Questo permette di usare lo stesso modello per esportare
- * in formati diversi.
+ * specifico (come PDF o XML).
+ * 
+ * Questo permette di usare lo stesso modello per esportare in formati diversi.
  */
 public class Document {
     private final String title;

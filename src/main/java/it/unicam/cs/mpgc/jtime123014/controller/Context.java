@@ -5,7 +5,7 @@ import it.unicam.cs.mpgc.jtime123014.service.*;
 
 /**
  * Una classe centrale che tiene traccia dei componenti principali.
- * <p>
+ * 
  * Serve a far comunicare tra loro le diverse parti dell'applicazione (come le
  * varie
  * finestre e la logica di controllo) senza dover passare riferimenti ovunque.
@@ -26,7 +26,7 @@ public class Context {
     }
 
     /**
-     * Costruttore privato (Singleton).
+     * Costruttore privato.
      */
     private Context() {
         // Inizializza il controller principale dell'applicazione (JTimeController).

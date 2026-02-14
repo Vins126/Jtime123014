@@ -4,7 +4,7 @@ import java.util.List;
 
 /**
  * Rappresenta un progetto, che è un contenitore di attività (Task).
- * <p>
+ * 
  * Ogni progetto ha un nome, una descrizione e una priorità.
  * La priorità aiuta a decidere quali attività svolgere prima.
  * Lo stato del progetto dipende dallo stato delle sue task.
@@ -79,7 +79,7 @@ public interface Project<ID> extends Identifiable<ID> {
 
     /**
      * Tenta di marcare il progetto come {@link Status#COMPLETED}.
-     * <p>
+     * 
      * Questa operazione ha successo solo se **tutte** le task associate al progetto
      * sono state completate.
      * 
@@ -128,7 +128,7 @@ public interface Project<ID> extends Identifiable<ID> {
 
     /**
      * Restituisce solo le task che sono ancora in attesa di essere completate.
-     * <p>
+     * 
      * Questo metodo è fondamentale per lo {@code Scheduler}, che lo utilizza per
      * sapere
      * quali attività deve ancora pianificare nei giorni disponibili.

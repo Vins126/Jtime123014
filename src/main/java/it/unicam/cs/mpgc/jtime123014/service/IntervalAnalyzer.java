@@ -37,14 +37,14 @@ public class IntervalAnalyzer {
         double totalSaturation = 0;
         int dayBufferCount = 0;
 
+        // Calcola la saturazione media
         for (Day<?> d : days) {
-            // Calculate saturation
             if (d.getBuffer() > 0) {
                 totalSaturation += (double) (d.getBuffer() - d.getFreeBuffer()) / d.getBuffer();
                 dayBufferCount++;
             }
 
-            // Calculate completed minutes
+            // Calcola i minuti totali e il numero di task completati
             for (Task<?> t : d.getTasks()) {
                 if (t.getStatus() == Status.COMPLETED && t.getDurationActual() != null) {
                     totalMinutes += t.getDurationActual();
@@ -59,6 +59,14 @@ public class IntervalAnalyzer {
         return new IntervalReportDTO(start, end, totalMinutes, velocity, avgSat, prioMap);
     }
 
+    /**
+     * Filtra i giorni del calendario compresi tra la data di inizio e la data di fine.
+     * 
+     * @param calendar il calendario da analizzare.
+     * @param start    la data di inizio.
+     * @param end      la data di fine.
+     * @return la lista dei giorni compresi tra la data di inizio e la data di fine.
+     */
     private List<? extends Day<?>> filterDays(Calendar<?> calendar, LocalDate start, LocalDate end) {
         return calendar.getDays().stream()
                 .filter(d -> d.getId() instanceof LocalDate date

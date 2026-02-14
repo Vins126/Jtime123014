@@ -17,7 +17,7 @@ import java.util.function.Consumer;
 
 /**
  * Gestisce la schermata con l'elenco di tutti i progetti.
- * <p>
+ * 
  * Permette di vedere i progetti esistenti, crearne di nuovi, modificarli o
  * eliminarli.
  */
@@ -34,13 +34,8 @@ public class ProjectsController {
 
     private ObservableList<Project<?>> projectsData = FXCollections.observableArrayList();
 
-    /**
-     * Riferimento al controller applicativo per operazioni logiche (es. CRUD
-     * progetti).
-     */
     private AppController controller;
 
-    /** Riferimento al controller principale per la navigazione tra viste. */
     private MainController mainController;
 
     /**
@@ -80,7 +75,7 @@ public class ProjectsController {
     }
 
     /**
-     * Mostra un dialog modale per creare o modificare un progetto.
+     * Mostra un dialog per creare o modificare un progetto.
      *
      * @param projectToEdit Il progetto da modificare, o null per crearne uno nuovo.
      */

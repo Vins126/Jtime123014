@@ -27,9 +27,6 @@ public class PriorityScheduler extends AbstractScheduler {
     }
 
     /**
-     * Esegue la pianificazione delle attività utilizzando l'algoritmo
-     * Priority-Greedy.
-     * <p>
      * Modifica lo stato del calendario assegnando le task ai giorni e aggiornando
      * lo stato delle task a {@link Status#IN_PROGRESS}.
      * 
@@ -38,21 +35,17 @@ public class PriorityScheduler extends AbstractScheduler {
      */
     @Override
     public void schedule(Calendar<?> calendar, LocalDate startDate) {
-        // Utilizza il metodo ereditato da AbstractScheduler per filtrare i giorni
         List<Day<?>> daysFromToday = getDaysFromToday(calendar, startDate);
 
         for (Project<?> project : calendar.getProjects()) {
             Priority priority = project.getPriority();
 
             for (Day<?> day : daysFromToday) {
-                // Verifica quanto tempo è possibile usare oggi per questa priorità
                 int maxPercentage = calculateMaxAllocatableTime(day, priority);
 
                 List<Task<?>> pendingTasks = project.getPendingTasks();
                 Iterator<Task<?>> iterator = pendingTasks.iterator();
 
-                // Finché ci sono task, c'è spazio nel buffer libero E non ho superato la quota
-                // per priorità
                 while (iterator.hasNext() && day.getFreeBuffer() > 0 && maxPercentage > 0) {
                     Task<?> task = iterator.next();
 
@@ -80,10 +73,8 @@ public class PriorityScheduler extends AbstractScheduler {
      * @return true se la task è stata pianificata, false altrimenti.
      */
     private boolean tryScheduleTask(Day<?> day, Task<?> task, int maxAllocatableTime) {
-        // Provo a mettere la task nel giorno
         int timeRequired = task.getTimeConsuming();
 
-        // Controllo se ci sta
         if (timeRequired <= day.getFreeBuffer() && timeRequired <= maxAllocatableTime) {
             day.addTask(task);
             task.setStatus(Status.IN_PROGRESS);

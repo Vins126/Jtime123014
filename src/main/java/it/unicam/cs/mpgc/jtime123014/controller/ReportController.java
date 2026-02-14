@@ -26,7 +26,7 @@ public class ReportController {
 
     /**
      * Costruttore predefinito.
-     * <p>
+     * 
      * Usa le implementazioni standard per tutti i servizi necessari.
      *
      * @param calendar il calendario da cui estrarre i dati per i report.
@@ -41,7 +41,7 @@ public class ReportController {
 
     /**
      * Costruttore principale.
-     * <p>
+     * 
      * Permette di specificare le implementazioni dei vari servizi utilizzati,
      * rendendo la classe flessibile.
      *
@@ -81,7 +81,7 @@ public class ReportController {
 
     /**
      * Crea un report completo per un progetto specifico.
-     * <p>
+     * 
      * Il processo include:
      * 1. Ricerca del progetto per ID.
      * 2. Generazione del DTO.
@@ -106,13 +106,10 @@ public class ReportController {
             return null;
         }
 
-        // 1. Service -> DTO
         ProjectReportDTO dto = reportService.generateProjectReport(targetProject);
 
-        // 2. Generator -> Document
         Document doc = documentGenerator.transform(dto);
 
-        // 3. Export XML file
         String title = targetProject.getName() + " " + LocalDate.now();
         String fileName = "Report_" + targetProject.getName().replace(" ", "_") + "_" + LocalDate.now() + ".xml";
         String filePath = outputDirectory + "/" + fileName;
@@ -120,7 +117,6 @@ public class ReportController {
         new File(outputDirectory).mkdirs();
         reportExporter.export(doc, filePath);
 
-        // 4. Return Report with file reference
         return new Report(title, doc, new File(filePath));
     }
 
@@ -132,13 +128,9 @@ public class ReportController {
      * @return L'oggetto {@link Report} generato.
      */
     public Report createIntervalReport(LocalDate start, LocalDate end) {
-        // 1. Service -> DTO
         IntervalReportDTO dto = reportService.generateIntervalReport(start, end);
 
-        // 2. Generator -> Document
         Document doc = documentGenerator.transform(dto);
-
-        // 3. Export XML file
         String title = start + "-" + end;
         String fileName = "IntervalReport_" + start + "_to_" + end + ".xml";
         String filePath = outputDirectory + "/" + fileName;
@@ -146,14 +138,13 @@ public class ReportController {
         new File(outputDirectory).mkdirs();
         reportExporter.export(doc, filePath);
 
-        // 4. Return Report with file reference
         return new Report(title, doc, new File(filePath));
     }
 
     /**
      * Scansiona la directory dei report configurata e restituisce la lista dei
      * report disponibili.
-     * <p>
+     * 
      * I file XML trovati vengono parsati tramite {@link XMLReportParser} per
      * ricostruire
      * gli oggetti {@link Document}.

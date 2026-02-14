@@ -10,7 +10,7 @@ import javafx.scene.text.TextFlow;
 
 /**
  * Gestisce la finestra che mostra il contenuto di un report a video.
- * <p>
+ * 
  * Prende i dati del report e li trasforma in elementi grafici (titoli e testo)
  * da mostrare all'utente.
  */
@@ -51,10 +51,6 @@ public class ReportViewController {
      * Mantiene intatta l'intestazione se presente (indice 0).
      */
     private void clearReportContainer() {
-        // Clear existing content (except title if present at index 0)
-        // We probably want to keep the title label if it's inside the VBox,
-        // but here lblTitle is injected separately.
-        // Assuming we kept index 0 logic from original code.
         if (reportContainer.getChildren().size() > 1) {
             reportContainer.getChildren().remove(1, reportContainer.getChildren().size());
         }

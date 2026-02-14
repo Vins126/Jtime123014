@@ -9,7 +9,7 @@ import java.util.UUID;
 
 /**
  * Implementazione base di una attività (Task).
- * <p>
+ * 
  * Mantiene i dati comuni come nome, descrizione, stato e durate (stimata ed
  * effettiva).
  */
@@ -69,7 +69,7 @@ public abstract class AbstractTask extends AbstractEntity<UUID> implements Task<
 
     /**
      * Calcola la differenza tra la durata effettiva e quella stimata.
-     * <p>
+     * 
      * Questo metodo deve essere chiamato solo dopo che {@code durationActual} è
      * stato impostato.
      *
@@ -87,7 +87,7 @@ public abstract class AbstractTask extends AbstractEntity<UUID> implements Task<
 
     /**
      * Completa il task impostando lo stato a {@link Status#COMPLETED}.
-     * <p>
+     * 
      * Questo metodo imposta anche la durata effettiva prima di calcolare il delta.
      *
      * @param durationActual la durata effettiva in minuti.
@@ -102,10 +102,10 @@ public abstract class AbstractTask extends AbstractEntity<UUID> implements Task<
 
     /**
      * Completa il task impostando lo stato a {@link Status#COMPLETED}.
-     * <p>
-     * <b>Nota:</b> Questo metodo presume che {@code durationActual} sia già stato
-     * impostato
-     * precedentemente (es. tramite setter). Se è null, viene lanciata un'eccezione.
+     * 
+     * Questo metodo presume che {@code durationActual} sia già stato
+     * impostato precedentemente (es. tramite setter). Se è null, viene lanciata
+     * un'eccezione.
      *
      * @return il delta calcolato (effettiva - stimata).
      * @throws IllegalStateException se la durata effettiva non è stata impostata.

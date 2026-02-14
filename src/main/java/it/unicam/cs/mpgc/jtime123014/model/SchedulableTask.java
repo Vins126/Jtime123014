@@ -2,7 +2,7 @@ package it.unicam.cs.mpgc.jtime123014.model;
 
 /**
  * Interfaccia che espone i dati necessari per la pianificazione (scheduling).
- * <p>
+ * 
  * Permette di sapere quanto tempo manca per completare una task,
  * informazione essenziale per decidere in quale giorno inserirla.
  */

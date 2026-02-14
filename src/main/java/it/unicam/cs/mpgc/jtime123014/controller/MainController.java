@@ -13,7 +13,7 @@ import java.util.function.Consumer;
 
 /**
  * Gestisce la finestra principale dell'applicazione.
- * <p>
+ * 
  * Si occupa di far funzionare la navigazione tra le varie schermate (Home,
  * Calendario, Progetti) e di aprire le schede per visualizzare i report.
  */
@@ -43,7 +43,6 @@ public class MainController {
     @FXML
     private Button btnProjects;
 
-    /** Riferimento cached al Context. */
     private final Context context = Context.getInstance();
 
     /**

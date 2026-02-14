@@ -11,10 +11,6 @@ import java.time.LocalDate;
 /**
  * Implementazione di base di {@link CalendarService} che lavora con date
  * {@link LocalDate}.
- * <p>
- * Gestisce la creazione e la rimozione dei giorni utilizzando una Factory
- * interna,
- * in modo da poter cambiare facilmente il tipo di giorni creati se necessario.
  */
 public abstract class SimpleCalendarService implements CalendarService {
 
@@ -81,7 +77,7 @@ public abstract class SimpleCalendarService implements CalendarService {
     protected abstract LocalDate plusDays(LocalDate day, int i);
 
     /**
-     * Restituisce i giorni passati (con controllo tipo sicuro — LSP).
+     * Restituisce i giorni passati .
      *
      * @param today la data odierna.
      * @return lista dei giorni passati.
@@ -105,7 +101,7 @@ public abstract class SimpleCalendarService implements CalendarService {
     }
 
     /**
-     * Ordina i giorni in ordine cronologico (con controllo tipo sicuro — LSP).
+     * Ordina i giorni in ordine cronologico .
      *
      * @param days lista dei giorni da ordinare.
      * @return lista dei giorni ordinati.

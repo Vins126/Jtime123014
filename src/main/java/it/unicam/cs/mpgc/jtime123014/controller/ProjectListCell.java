@@ -15,7 +15,7 @@ import java.util.Objects;
 
 /**
  * Si occupa di visualizzare un singolo progetto nella lista.
- * <p>
+ * 
  * Mostra il nome del progetto, quante cose ci sono da fare e i pulsanti per
  * gestirlo (apri, modifica, elimina).
  */

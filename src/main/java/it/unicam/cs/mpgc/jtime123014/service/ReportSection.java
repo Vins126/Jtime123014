@@ -6,7 +6,7 @@ import java.util.List;
 
 /**
  * Una sezione del documento (es. "Riepilogo", "Dettagli").
- * <p>
+ * 
  * Ogni sezione ha un titolo e una serie di righe di testo che contengono le
  * informazioni.
  */

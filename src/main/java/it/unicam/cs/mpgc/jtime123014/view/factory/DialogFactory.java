@@ -5,15 +5,13 @@ import javafx.scene.control.ButtonType;
 
 /**
  * Factory per Alert generici (errore, conferma, informazione).
- * <p>
- * Responsabilità singola: costruzione di finestre di avviso standard.
- * I dialog con form domain-specific sono gestiti da {@link FormDialogFactory}.
+ * 
+ * Responsabilità: costruzione di finestre di avviso standard.
  */
 public class DialogFactory {
 
     /**
-     * Costruttore privato per prevenire l'istanziazione di questa classe di
-     * utilità.
+     * Costruttore privato per prevenire l'istanziazione di questa classe
      */
     private DialogFactory() {
         throw new UnsupportedOperationException("Questa è una classe di utilità e non può essere istanziata.");

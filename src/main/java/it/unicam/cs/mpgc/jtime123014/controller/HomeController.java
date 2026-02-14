@@ -15,7 +15,7 @@ import java.util.concurrent.CompletableFuture;
 
 /**
  * Controlla la schermata principale (Dashboard).
- * <p>
+ * 
  * Mostra un riepilogo veloce: quanti progetti ci sono, quante cose restano da
  * fare
  * e qual è la prossima scadenza. Permette anche di aprire rapidamente i report.
@@ -40,10 +40,8 @@ public class HomeController {
     @FXML
     private ListView<Report> reportsListView;
 
-    /** Riferimento al controller applicativo. */
     private AppController controller;
 
-    /** Riferimento al controller della vista principale per la gestione dei tab. */
     private MainController mainController;
 
     /**

@@ -6,7 +6,7 @@ import java.util.Map;
 
 /**
  * Generatore di documenti standard.
- * <p>
+ * 
  * Crea un documento organizzato in tre sezioni principali: panoramica, analisi
  * dei tempi
  * e dettagli sullo stato delle attività.

@@ -8,10 +8,6 @@ import java.io.Serializable;
 
 /**
  * Classe astratta che implementa l'interfaccia {@link Identifiable}.
- * Fornisce il supporto di base per la gestione dell'identificatore univoco
- * (UUID),
- * inclusa l'implementazione corretta dei metodi {@code equals} e
- * {@code hashCode}.
  *
  * @param <ID> il tipo dell'identificatore univoco.
  */

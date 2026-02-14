@@ -19,7 +19,7 @@ import java.util.Objects;
 
 /**
  * Si occupa di visualizzare un singolo giorno nella lista del calendario.
- * <p>
+ * 
  * Mostra la data e l'elenco delle attività previste per quel giorno,
  * distinguendo
  * quelle completate da quelle ancora da fare.
@@ -88,7 +88,7 @@ public class DayListCell extends ListCell<Day<?>> {
 
     /**
      * Crea una riga grafica per una singola task.
-     * <p>
+     * 
      * La riga contiene: nome della task, durata stimata e bottoni per le azioni
      * (completa, modifica, elimina).
      *

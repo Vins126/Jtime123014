@@ -1,7 +1,7 @@
 package it.unicam.cs.mpgc.jtime123014.util;
 
 /**
- * Utility class for common validation logic.
+ * Classe per la validazione di valori.
  */
 public class ValidationUtils {
 
@@ -13,11 +13,11 @@ public class ValidationUtils {
     }
 
     /**
-     * Checks if a value is non-negative.
+     * Verifica se un valore è non negativo.
      *
-     * @param value     the value to check
-     * @param fieldName the name of the field mostly for error messages
-     * @throws IllegalArgumentException if the value is negative
+     * @param value     il valore da controllare
+     * @param fieldName il nome del campo per i messaggi di errore
+     * @throws IllegalArgumentException se il valore è negativo
      */
     public static void checkNonNegative(int value, String fieldName) {
         if (value < 0) {
@@ -26,11 +26,11 @@ public class ValidationUtils {
     }
 
     /**
-     * Checks if a value is positive.
+     * Verifica se un valore è positivo.
      * 
-     * @param value     the value to check
-     * @param fieldName the name of the field mostly for error messages
-     * @throws IllegalArgumentException if the value is not positive
+     * @param value     il valore da controllare
+     * @param fieldName il nome del campo per i messaggi di errore
+     * @throws IllegalArgumentException se il valore non è positivo
      */
     public static void checkPositive(int value, String fieldName) {
         if (value <= 0) {

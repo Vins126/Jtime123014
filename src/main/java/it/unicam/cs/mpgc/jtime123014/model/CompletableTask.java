@@ -2,7 +2,7 @@ package it.unicam.cs.mpgc.jtime123014.model;
 
 /**
  * Interfaccia per la gestione del completamento di una task.
- * <p>
+ * 
  * Contiene i metodi necessari per segnare una task come completata e calcolare
  * la differenza tra il tempo stimato e quello effettivamente impiegato.
  */

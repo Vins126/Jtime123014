@@ -4,7 +4,7 @@ import lombok.Getter;
 
 /**
  * Rappresenta l'importanza di un'attività (Priorità).
- * <p>
+ * 
  * Ogni livello di priorità è associato a un valore numerico ("maxPercentage")
  * che indica quanto buffer giornaliero può occupare al massimo un'attività di
  * quella priorità.

@@ -12,7 +12,7 @@ import java.time.LocalDate;
 
 /**
  * Implementazione base di un giorno.
- * <p>
+ * 
  * Mantiene la lista delle task assegnate e gestisce il tempo disponibile
  * (buffer).
  */
@@ -158,15 +158,12 @@ public abstract class AbstractDay extends AbstractEntity<LocalDate> implements D
      */
     @Override
     public void reset() {
-        // Resetta lo stato delle task a PENDING (se non completate)
         for (Task<?> task : this.tasks) {
             if (task.getStatus() != Status.COMPLETED) {
                 task.setStatus(Status.PENDING);
             }
         }
-        // Rimuove tutte le task dal giorno
         this.tasks.clear();
-        // Resetta il buffer del giorno al suo massimo
         this.setFreeBuffer(this.getBuffer());
     }
 }

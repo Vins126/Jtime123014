@@ -2,10 +2,9 @@ package it.unicam.cs.mpgc.jtime123014.model;
 
 /**
  * Interfaccia per la gestione della vista temporale (Mese e Anno).
- * <p>
+ * 
  * Permette di sapere o modificare quale mese e anno l'applicazione sta
- * mostrando,
- * senza dover accedere all'intero calendario.
+ * mostrando, senza dover accedere all'intero calendario.
  */
 public interface TemporalView {
 

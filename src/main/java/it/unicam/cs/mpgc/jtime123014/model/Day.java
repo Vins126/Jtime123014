@@ -4,7 +4,7 @@ import java.util.List;
 
 /**
  * Rappresenta un giorno nel calendario.
- * <p>
+ * 
  * Un giorno ha una certa capacità lavorativa (buffer), che diminuisce man mano
  * che vengono aggiunte delle attività.
  * Serve a gestire le task assegnate a una data specifica e a controllare
@@ -32,7 +32,7 @@ public interface Day<ID> extends Identifiable<ID> {
     /**
      * Sottrae una quantità di tempo dal buffer disponibile.
      * Viene chiamato quando una task viene pianificata o si consuma tempo.
-     * <p>
+     * 
      * Se il buffer utilizzato supera quello disponibile, il comportamento dipende
      * dall'implementazione
      * (potrebbe lanciare eccezione o ritornare false).

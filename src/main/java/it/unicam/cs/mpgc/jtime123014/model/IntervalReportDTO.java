@@ -3,13 +3,16 @@ package it.unicam.cs.mpgc.jtime123014.model;
 import java.time.LocalDate;
 import java.util.Map;
 
+import lombok.Getter;
+
 /**
  * Oggetto che contiene i dati riassuntivi di un intervallo di tempo per il
  * report.
- * <p>
+ * 
  * Raccoglie informazioni come il totale delle ore lavorate, la velocità media
  * e come è stato distribuito il tempo tra le varie priorità.
  */
+@Getter
 public class IntervalReportDTO {
     private final LocalDate startDate;
     private final LocalDate endDate;
@@ -39,35 +42,4 @@ public class IntervalReportDTO {
         this.timeDistributionByPriority = timeDistributionByPriority;
     }
 
-    // Getters
-
-    /** @return la data di inizio dell'intervallo. */
-    public LocalDate getStartDate() {
-        return startDate;
-    }
-
-    /** @return la data di fine dell'intervallo. */
-    public LocalDate getEndDate() {
-        return endDate;
-    }
-
-    /** @return il numero totale di minuti lavorati nell'intervallo. */
-    public long getTotalMinutesWorked() {
-        return totalMinutesWorked;
-    }
-
-    /** @return la velocità media di completamento (task per giorno). */
-    public double getAverageVelocity() {
-        return averageVelocity;
-    }
-
-    /** @return la percentuale media di utilizzo del buffer (0.0 - 1.0). */
-    public double getAverageBufferSaturation() {
-        return averageBufferSaturation;
-    }
-
-    /** @return una mappa con i minuti lavorati per ogni livello di priorità. */
-    public Map<Priority, Long> getTimeDistributionByPriority() {
-        return timeDistributionByPriority;
-    }
 }

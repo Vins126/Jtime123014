@@ -6,7 +6,7 @@ import java.time.LocalDate;
 
 /**
  * Interfaccia che definisce le operazioni principali da fare sul calendario.
- * <p>
+ * 
  * Si occupa di aggiornare i giorni quando passa il tempo (rolling window) e
  * di preparare i giorni futuri per accogliere nuove task.
  */
@@ -39,7 +39,7 @@ public interface CalendarService {
 
     /**
      * Prepara i giorni del calendario per lo scheduling.
-     * <p>
+     * 
      * Imposta il buffer giornaliero e resetta il buffer libero per i giorni futuri
      * a partire dalla data specificata.
      *

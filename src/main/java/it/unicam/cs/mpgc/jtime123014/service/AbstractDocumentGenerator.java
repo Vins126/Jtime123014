@@ -4,7 +4,7 @@ import java.util.Locale;
 
 /**
  * Classe base per i generatori di documenti.
- * <p>
+ * 
  * Offre funzioni utili per formattare i numeri (es. percentuali e decimali)
  * e per organizzare i dati in sezioni, evitando di riscrivere lo stesso codice
  * in ogni generatore specifico.

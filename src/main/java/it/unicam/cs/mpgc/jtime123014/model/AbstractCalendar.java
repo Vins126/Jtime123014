@@ -10,7 +10,7 @@ import lombok.Setter;
 
 /**
  * Implementazione base di un calendario.
- * <p>
+ * 
  * Gestisce le informazioni comuni come il mese, l'anno, e le liste di giorni e
  * progetti.
  */
@@ -147,10 +147,6 @@ public abstract class AbstractCalendar extends AbstractEntity<UUID> implements C
         if (!projects.contains(project)) {
             throw new IllegalArgumentException("Il progetto non esiste");
         }
-        // if (project.getStatus() != Status.COMPLETED) {
-        // throw new IllegalStateException("Il progetto non è completato");
-        // }
-        // REMOVE RESTRICTION AS REQUESTED BY USER
         return projects.remove(project);
     }
 
