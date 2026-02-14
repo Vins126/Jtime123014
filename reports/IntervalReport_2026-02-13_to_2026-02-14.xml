@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<Report>
-    <Title>Interval Report (2026-02-13 - 2026-02-14)</Title>
-    <Section title="Statistics">
-        <Content>Total Minutes Worked: 250</Content>
-        <Content>Average Velocity (Tasks/Day): 0,50</Content>
-        <Content>Buffer Saturation: 68,75%</Content>
-    </Section>
-</Report>

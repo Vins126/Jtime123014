@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Report>
+    <Title>Project Report: </Title>
+    <Section title="Overview">
+        <Content>Project ID: 0c8bb48d-b558-4611-a01e-f34aefa01a5a</Content>
+        <Content>Completion: 0.00%</Content>
+        <Content>Estimated End Date: 2026-02-14</Content>
+    </Section>
+    <Section title="Time Analysis">
+        <Content>Total Estimated: 50</Content>
+        <Content>Total Actual: 0</Content>
+        <Content>Total Delta: 0</Content>
+    </Section>
+    <Section title="Task Status Details">
+        <Content>--- Summary ---</Content>
+        <Content>IN_PROGRESS: 1</Content>
+        <Content>--- Detailed Lists ---</Content>
+        <Content>Status: IN_PROGRESS</Content>
+        <Content> -  [Est: 50m]</Content>
+    </Section>
+</Report>

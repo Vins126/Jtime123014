@@ -1,5 +1,11 @@
 package it.unicam.cs.mpgc.jtime123014;
 
+import it.unicam.cs.mpgc.jtime123014.model.*;
+import it.unicam.cs.mpgc.jtime123014.service.*;
+import it.unicam.cs.mpgc.jtime123014.controller.*;
+import it.unicam.cs.mpgc.jtime123014.model.*;
+import it.unicam.cs.mpgc.jtime123014.service.*;
+import it.unicam.cs.mpgc.jtime123014.controller.*;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -163,13 +169,21 @@ class TestRealisticScenario {
         // Verifica buffer diminuito
         assertTrue(day0.getFreeBuffer() < day0.getBuffer(), "Il freeBuffer del giorno 0 deve essere diminuito");
 
-        // Verifica file XML
-        File reportDir = new File("src/test/resources/reports");
-        assertTrue(reportDir.exists() && reportDir.isDirectory());
+        // Verifica Report Files (reports sono file XML, non serializzati)
+        java.io.File reportDir = new java.io.File(controller.getReportOutputDirectory());
+        assertTrue(reportDir.exists() && reportDir.isDirectory(),
+                "La directory dei report deve esistere");
 
-        File[] files = reportDir.listFiles((dir, name) -> name.endsWith(".xml"));
-        assertNotNull(files);
-        assertTrue(files.length >= 2, "Dovrebbero esserci almeno 2 report XML (1 progetto, 1 intervallo)");
+        java.io.File[] reportFiles = reportDir.listFiles((dir, name) -> name.endsWith(".xml"));
+        assertNotNull(reportFiles);
+        assertTrue(reportFiles.length >= 2,
+                "Dovrebbero esserci almeno 2 report XML (1 progetto, 1 intervallo)");
+
+        // Verifica che il caricamento dalla directory funzioni
+        java.util.List<Report> loadedReports = controller.loadReportsFromDirectory();
+        assertNotNull(loadedReports);
+        assertTrue(loadedReports.size() >= 2,
+                "loadReportsFromDirectory deve trovare almeno 2 report");
 
         // Verifica reflection sul progetto
         // La task taskToComplete appartiene a uno dei progetti.

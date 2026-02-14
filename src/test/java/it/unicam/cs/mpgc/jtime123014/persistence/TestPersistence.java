@@ -1,4 +1,7 @@
 package it.unicam.cs.mpgc.jtime123014.persistence;
+import it.unicam.cs.mpgc.jtime123014.model.*;
+import it.unicam.cs.mpgc.jtime123014.service.*;
+import it.unicam.cs.mpgc.jtime123014.controller.*;
 
 import it.unicam.cs.mpgc.jtime123014.*;
 import org.junit.jupiter.api.Test;

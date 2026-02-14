@@ -1,5 +1,7 @@
 package it.unicam.cs.mpgc.jtime123014;
 
+import it.unicam.cs.mpgc.jtime123014.model.*;
+
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -8,6 +10,11 @@ import java.util.UUID;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+/**
+ * Test per le operazioni primitive di SimpleDay (addTask, updateBuffer).
+ * La logica di scheduling è ora responsabilità del PriorityScheduler (SRP),
+ * testata in TestSystemScenario / TestRealisticScenario.
+ */
 class SimpleDayTest {
 
     private SimpleDay day;
@@ -17,41 +24,42 @@ class SimpleDayTest {
     void setUp() {
         day = new SimpleDay(LocalDate.now(), 100);
         task = new SimpleTask(UUID.randomUUID(), "Test Task", "Description", 50);
-        task.setTimeConsuming(50); // Important: setTimeConsuming is used by scheduleTask
+        task.setTimeConsuming(50);
     }
 
     @Test
-    void shouldNotScheduleIfFreeBufferExceeded() {
-        // Task requires 150, buffer is 100
+    void shouldNotAddTaskIfBufferExceeded() {
+        // Simula scheduling: task richiede 150, buffer è 100
         task.setTimeConsuming(150);
 
-        boolean scheduled = day.scheduleTask(task, 100);
-
-        assertFalse(scheduled, "Should not schedule if task duration exceeds free buffer");
-        assertEquals(100, day.getFreeBuffer(), "Free buffer should remain unchanged");
-        assertFalse(day.getTasks().contains(task), "Task should not be in the list");
-    }
-
-    @Test
-    void shouldNotScheduleIfMaxPercentageExceeded() {
-        // Task requires 60, maxPercentage is 50
-        // Free buffer is 100 (so it fits in buffer, but not in percentage)
-        task.setTimeConsuming(60);
-
-        boolean scheduled = day.scheduleTask(task, 50);
-
-        assertFalse(scheduled, "Should not schedule if task duration exceeds max percentage");
+        // Il buffer non è sufficiente
+        assertFalse(day.updateBuffer(150), "updateBuffer should return false if exceeds free buffer");
         assertEquals(100, day.getFreeBuffer(), "Free buffer should remain unchanged");
     }
 
     @Test
-    void shouldUpdateBufferAfterTaskAdded() {
-        // Task 50, Buffer 100, Max% 100
-        boolean scheduled = day.scheduleTask(task, 100);
+    void shouldAddTaskAndUpdateBuffer() {
+        // Simula scheduling: task 50, buffer 100
+        day.addTask(task);
+        task.setStatus(Status.IN_PROGRESS);
+        day.updateBuffer(50);
 
-        assertTrue(scheduled, "Should schedule task successfully");
-        assertEquals(50, day.getFreeBuffer(), "Free buffer should be reduced by task duration"); // 100 - 50 = 50
-        assertTrue(day.getTasks().contains(task), "Task should be added to the list");
-        assertEquals(Status.IN_PROGRESS, task.getStatus(), "Task status should be changed to IN_PROGRESS");
+        assertTrue(day.getTasks().contains(task), "Task should be in the list");
+        assertEquals(50, day.getFreeBuffer(), "Free buffer should be reduced by task duration");
+        assertEquals(Status.IN_PROGRESS, task.getStatus(), "Task status should be IN_PROGRESS");
+    }
+
+    @Test
+    void shouldRejectDuplicateTask() {
+        day.addTask(task);
+
+        assertThrows(IllegalArgumentException.class, () -> day.addTask(task),
+                "Should reject duplicate task");
+    }
+
+    @Test
+    void shouldRejectNullTask() {
+        assertThrows(NullPointerException.class, () -> day.addTask(null),
+                "Should reject null task");
     }
 }

@@ -1,12 +1,14 @@
 package it.unicam.cs.mpgc.jtime123014;
 
+import it.unicam.cs.mpgc.jtime123014.model.*;
+import it.unicam.cs.mpgc.jtime123014.service.*;
 
 import java.time.LocalDate;
 
 public class TestCalendarService extends SimpleCalendarService {
-    @Override
-    protected Day<LocalDate> createDay(LocalDate day, int buffer) {
-        return new TestModels.TestDay(day, buffer);
+
+    public TestCalendarService() {
+        super(TestModels.TestDay::new);
     }
 
     @Override

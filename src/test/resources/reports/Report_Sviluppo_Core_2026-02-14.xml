@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Report>
+    <Title>Project Report: Sviluppo Core</Title>
+    <Section title="Overview">
+        <Content>Project ID: 6f8f54d4-1bef-4ca0-9502-b27a0f9116dd</Content>
+        <Content>Completion: 20.00%</Content>
+        <Content>Estimated End Date: 2026-02-14</Content>
+    </Section>
+    <Section title="Time Analysis">
+        <Content>Total Estimated: 300</Content>
+        <Content>Total Actual: 70</Content>
+        <Content>Total Delta: 10</Content>
+    </Section>
+    <Section title="Task Status Details">
+        <Content>--- Summary ---</Content>
+        <Content>IN_PROGRESS: 4</Content>
+        <Content>COMPLETED: 1</Content>
+        <Content>--- Detailed Lists ---</Content>
+        <Content>Status: IN_PROGRESS</Content>
+        <Content> - Core Task 1 [Est: 60m]</Content>
+        <Content> - Core Task 2 [Est: 60m]</Content>
+        <Content> - Core Task 3 [Est: 60m]</Content>
+        <Content> - Core Task 4 [Est: 60m]</Content>
+        <Content>Status: COMPLETED</Content>
+        <Content> - Core Task 0 [Est: 60m, Act: 70m]</Content>
+    </Section>
+</Report>

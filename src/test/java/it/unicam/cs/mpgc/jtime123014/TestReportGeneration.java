@@ -1,5 +1,12 @@
 package it.unicam.cs.mpgc.jtime123014;
 
+import it.unicam.cs.mpgc.jtime123014.model.*;
+import it.unicam.cs.mpgc.jtime123014.service.*;
+import it.unicam.cs.mpgc.jtime123014.controller.*;
+import it.unicam.cs.mpgc.jtime123014.model.*;
+import it.unicam.cs.mpgc.jtime123014.service.*;
+import it.unicam.cs.mpgc.jtime123014.controller.*;
+
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -40,6 +47,7 @@ class TestReportGeneration {
     @Test
     void testFullReportFlow() {
         ReportController controller = new ReportController(calendar);
+        controller.setOutputDirectory("reports");
 
         File reportDir = new File("reports");
         if (!reportDir.exists()) {

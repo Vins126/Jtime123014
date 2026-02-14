@@ -8,7 +8,7 @@
 
 <VBox xmlns="http://javafx.com/javafx"
       xmlns:fx="http://javafx.com/fxml"
-      fx:controller="it.unicam.cs.mpgc.jtime123014.HomeController"
+      fx:controller="it.unicam.cs.mpgc.jtime123014.controller.HomeController"
       spacing="20" style="-fx-padding: 30;">
 
     <Label text="Dashboard" styleClass="header-label"/>
@@ -30,5 +30,17 @@
             <Label fx:id="nextDeadlineLabel" text="-" style="-fx-font-size: 24px; -fx-font-weight: bold; -fx-text-fill: #e74c3c;"/>
         </VBox>
     </GridPane>
+
+    <!-- Report Section -->
+    <VBox spacing="10">
+        <Label text="Report Generati" styleClass="subheader-label"/>
+        
+        <HBox spacing="10">
+            <javafx.scene.control.Button text="Report Progetto" onAction="#onNewProjectReport" styleClass="button"/>
+            <javafx.scene.control.Button text="Report Periodo" onAction="#onNewIntervalReport" styleClass="button"/>
+        </HBox>
+
+        <javafx.scene.control.ListView fx:id="reportsListView" prefHeight="200" styleClass="list-view"/>
+    </VBox>
 
 </VBox>

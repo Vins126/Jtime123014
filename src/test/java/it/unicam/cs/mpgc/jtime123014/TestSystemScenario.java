@@ -1,5 +1,12 @@
 package it.unicam.cs.mpgc.jtime123014;
 
+import it.unicam.cs.mpgc.jtime123014.model.*;
+import it.unicam.cs.mpgc.jtime123014.service.*;
+import it.unicam.cs.mpgc.jtime123014.controller.*;
+import it.unicam.cs.mpgc.jtime123014.model.*;
+import it.unicam.cs.mpgc.jtime123014.service.*;
+import it.unicam.cs.mpgc.jtime123014.controller.*;
+
 import org.junit.jupiter.api.Test;
 
 import java.time.LocalDate;
@@ -138,6 +145,7 @@ class TestSystemScenario {
 
                 // Manually instantiate ReportController as it is NOT in JTimeController anymore
                 ReportController reportController = new ReportController(cal);
+                reportController.setOutputDirectory("reports");
 
                 // Project Report for P1
                 reportController.createProjectReport(p1.getId().toString());

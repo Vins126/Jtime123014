@@ -11,7 +11,7 @@
 
 <VBox xmlns="http://javafx.com/javafx"
       xmlns:fx="http://javafx.com/fxml"
-      fx:controller="it.unicam.cs.mpgc.jtime123014.ProjectsController"
+      fx:controller="it.unicam.cs.mpgc.jtime123014.controller.ProjectsController"
       spacing="10" style="-fx-padding: 20;">
 
     <HBox alignment="CENTER_LEFT" spacing="20">
