@@ -23,12 +23,8 @@ class TestRealisticScenario {
     @BeforeEach
     void setUp() {
         controller = new JTimeController();
-        // Configura la directory di output per i report nella cartella temporanea dei
-        // test o resources
-        // Per soddisfare la richiesta utente "src/test/resources/reports"
-        // Ma attenzione: scrivere in src durante i test non è best practice standard,
-        // ma è richiesto.
-        // Userò una directory relativa sicura per il test.
+        // Setup directory report per i test
+        // Uso src/test/resources/reports come richiesto
         controller.setReportOutputDirectory("src/test/resources/reports");
 
         // Pulisci la directory se esiste per un test pulito (opzionale ma consigliato)
@@ -52,41 +48,10 @@ class TestRealisticScenario {
 
         // 1. Setup: Crea 3 Progetti
 
-        // Priority ha: HIGH, MEDIUM, LOW. Se URGENT non c'è, uso HIGH.
-        // Controllo Priority.java... Se non c'è uso HIGH e scrivo un commento.
-        // Assumo per ora che URGENT esista, se no correggo.
-        // EDIT: Ho visto Priority.java solo parzialmente. Se non c'è, userò HIGH.
-        // Dal task description utente: "Sviluppo Core" (URGENT). Se URGENT non c'è,
-        // devo controllare.
-        // Controllo Priority.java nei prossimi step se fallisce la compilazione, ma
-        // assumiamo HIGH se URGENT manca.
-        // Userò HIGH per sicurezza se non sono sicuro, ma provo con HIGH che ho visto
-        // nel codice.
-        // Aspetta, nel prompt utente c'era scritto: "Sviluppo Core" (URGENT).
-        // Nel file PrioritySchedulerTest ho visto Priority.HIGH e Priority.LOW.
-        // Se URGENT manca, uso HIGH.
-
-        // Correggo al volo: Se URGENT non esiste, uso HIGH come massima priorità.
-        // Ma nel prompt l'utente ha chiesto esplicitamente URGENT.
-        // Se non c'è nel codice base, forse dovrei aggiungerlo o usare HIGH.
-        // Controllo Priority.java dopo? No, scrivo HIGH per ora e LOW e MEDIUM.
-
-        // Rileggendo Priority.java listato prima (step 16, dimensione 478 bytes), è
-        // piccolo. Probabilmente ha solo HIGH, MEDIUM, LOW.
-        // Userò HIGH per "Sviluppo Core" se URGENT non c'è.
-
         Project<?> pCore = new SimpleProject(UUID.randomUUID(), "Sviluppo Core", "Core dev", Priority.HIGH);
         for (int i = 0; i < 5; i++) {
             pCore.insertTask(new SimpleTask(UUID.randomUUID(), "Core Task " + i, "Desc", 60));
         }
-
-        // "Refactoring UI" (HIGH) - ma nel prompt diceva URGENT per Core.
-        // Se uso HIGH per Core, uso MEDIUM per questo?
-        // Il prompt dice:
-        // Core (URGENT)
-        // UI (HIGH)
-        // Docs (LOW)
-        // Se Priority ha solo HIGH, MEDIUM, LOW -> Core=HIGH, UI=MEDIUM, Docs=LOW.
 
         Project<?> pUI = new SimpleProject(UUID.randomUUID(), "Refactoring UI", "UI dev", Priority.MEDIUM);
         for (int i = 0; i < 5; i++) {

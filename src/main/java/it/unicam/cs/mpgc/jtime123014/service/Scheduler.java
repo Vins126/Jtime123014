@@ -5,10 +5,8 @@ import it.unicam.cs.mpgc.jtime123014.model.*;
 import java.time.LocalDate;
 
 /**
- * Interfaccia per l'algoritmo di pianificazione (Scheduling).
- * <p>
- * Questo componente ha il compito di prendere le attività da fare e
- * decidere in quali giorni posizionarle, in base al tempo disponibile.
+ * Interfaccia per lo scheduler.
+ * Decide dove mettere le task nei giorni liberi.
  */
 public interface Scheduler {
 

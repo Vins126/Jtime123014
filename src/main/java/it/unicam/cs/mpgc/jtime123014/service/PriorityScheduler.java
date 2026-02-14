@@ -9,18 +9,14 @@ import java.time.LocalDate;
 
 /**
  * Scheduler che assegna le attività in base alla priorità.
- * <p>
- * <b>Come funziona:</b>
- * <ol>
- * <li>Considera i progetti uno alla volta.</li>
- * <li>Per ogni progetto, guarda la sua priorità (es. ALTA, MEDIA, BASSA).</li>
- * <li>La priorità determina quanto spazio massimo nel giorno può occupare quel
- * progetto.</li>
- * <li>Inserisce le task nei giorni liberi rispettando questo limite.</li>
- * </ol>
- * <p>
- * Questo approccio assicura che i progetti più importanti abbiano spazio, ma
- * evita che un singolo progetto monopolizzi completamente il calendario.
+ * 
+ * In pratica guarda i progetti uno per uno e checka la priorità (ALTA, MEDIA,
+ * BASSA).
+ * In base a quella decide quanto spazio occupare nel giorno.
+ * Se è ALTA ovviamente si prende più spazio.
+ * Poi piazza le task dove trova posto.
+ * 
+ * Questo serve per non far monopolizzare il calendario da un solo progetto.
  */
 public class PriorityScheduler extends AbstractScheduler {
 
@@ -49,8 +45,7 @@ public class PriorityScheduler extends AbstractScheduler {
             Priority priority = project.getPriority();
 
             for (Day<?> day : daysFromToday) {
-                // Calcola il tempo massimo allocabile in questo giorno per task di questa
-                // priorità
+                // Verifica quanto tempo è possibile usare oggi per questa priorità
                 int maxPercentage = calculateMaxAllocatableTime(day, priority);
 
                 List<Task<?>> pendingTasks = project.getPendingTasks();
@@ -85,11 +80,10 @@ public class PriorityScheduler extends AbstractScheduler {
      * @return true se la task è stata pianificata, false altrimenti.
      */
     private boolean tryScheduleTask(Day<?> day, Task<?> task, int maxAllocatableTime) {
-        // Tenta di schedulare la task nel giorno (la logica di controllo buffer è nel
-        // Day)
+        // Provo a mettere la task nel giorno
         int timeRequired = task.getTimeConsuming();
 
-        // Logica di scheduling (SRP: appartiene al Service, non al Model)
+        // Controllo se ci sta
         if (timeRequired <= day.getFreeBuffer() && timeRequired <= maxAllocatableTime) {
             day.addTask(task);
             task.setStatus(Status.IN_PROGRESS);

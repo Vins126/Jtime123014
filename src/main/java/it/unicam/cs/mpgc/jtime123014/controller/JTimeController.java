@@ -15,11 +15,9 @@ import java.nio.file.Paths;
 import java.io.IOException;
 
 /**
- * Il cervello dell'applicazione JTime.
- * <p>
- * Mette insieme i pezzi principali: i dati (il calendario), la logica (lo
- * scheduler)
- * e l'interfaccia utente. Si assicura che tutto funzioni correttamente insieme.
+ * Classe principale che fa da collante tra tutto.
+ * Gestisce il calendario, lo scheduler e la UI.
+ * Praticamente è il punto di ingresso per la logica.
  */
 public class JTimeController implements AppController {
 

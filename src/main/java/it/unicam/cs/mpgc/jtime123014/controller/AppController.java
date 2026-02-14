@@ -8,7 +8,7 @@ import java.util.UUID;
 
 /**
  * L'interfaccia principale che controlla l'intera applicazione.
- * <p>
+ * 
  * Mette a disposizione le funzioni più importanti (come aggiungere progetti
  * o avviare la pianificazione) in modo che la grafica possa usarle facilmente.
  */
@@ -63,7 +63,7 @@ public interface AppController {
     void scheduleAsync(int dailyBufferMinutes, Runnable onComplete);
 
     /**
-     * Aggiorna la finestra temporale del calendario in base alla data odierna,
+     * Aggiorna i giorni del calendario in base alla data odierna,
      * assicurando che i giorni passati vengano archiviati o gestiti correttamente.
      */
     void updateRollingWindow();
@@ -91,7 +91,7 @@ public interface AppController {
     Report createProjectReport(String projectId);
 
     /**
-     * Crea un report aggregato per un intervallo di date specifico.
+     * Crea un report per un intervallo di date specifico.
      *
      * @param start Data di inizio intervallo.
      * @param end   Data di fine intervallo.

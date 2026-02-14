@@ -5,11 +5,8 @@ import it.unicam.cs.mpgc.jtime123014.model.*;
 import java.time.LocalDate;
 
 /**
- * Interfaccia per la generazione dei report.
- * <p>
- * Mette a disposizione i metodi per calcolare le statistiche di un progetto
- * o di un intervallo di tempo, restituendo i dati pronti per essere
- * visualizzati o salvati.
+ * Interfaccia per creare i report.
+ * Serve per calcolare le statistiche dei progetti o degli intervalli di tempo.
  */
 public interface ReportService {
     /**

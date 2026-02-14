@@ -5,7 +5,7 @@ import it.unicam.cs.mpgc.jtime123014.model.Day;
 import java.time.LocalDate;
 
 /**
- * Factory per la creazione di istanze di {@link Day} (OCP).
+ * Factory per la creazione di istanze di {@link Day}.
  * <p>
  * Permette a {@link SimpleCalendarService} di creare giorni
  * senza essere accoppiato a un'implementazione concreta.
